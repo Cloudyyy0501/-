@@ -1,8 +1,6 @@
-# -Smart Dorm Door/Window Alert System (Raspberry Pi + LINE Bot)
-
 專題簡介
 
-本專題為智慧宿舍安全門窗通知系統，使用 Raspberry Pi 5 讀取門磁/窗磁與 PIR 感測器狀態，當判定房內無人且門或窗未關閉時，透過 LINE Bot 推播警示訊息。
+本專題為智慧宿舍安全門窗通知系統，使用 Raspberry Pi 5 讀取門磁/窗磁與 PIR 感測器狀態；當判定房內無人且門或窗未關閉時，透過 LINE Bot 推播警示訊息。
 
 1. 功能
 
@@ -32,4 +30,12 @@
   
   PIR：GPIO 5
   
-  程式設定請見 src/winsdoor.py。
+  程式設定請見 src/winsdoor.py
+
+4. 程式說明（測試與正式執行）
+
+  src/pir.py：PIR 人體感測器測試程式，用於確認是否能正常偵測活動。
+  
+  src/led.py：門窗磁簧開關測試程式，用於確認門窗開/關時讀值是否正確。
+  
+  src/winsdoor.py：整合主程式，實際運作時執行此檔；整合門磁、窗磁與 PIR 進行異常判斷並推播 LINE 通知。
